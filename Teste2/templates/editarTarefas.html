@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+	<title>Minha Ferramenta</title>
+	<style>
+    /* Estilos gerais */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, p {
+      margin: 0;
+      padding: 10px;
+    }
+
+    /* Estilos do menu lateral */
+    .sidenav {
+      height: 100%;
+      width: 200px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #f0f0f0;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .sidenav img {
+      display: block;
+      margin: auto;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+
+    .sidenav a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #000;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      background-color: #ddd;
+    }
+
+    .new-task-button, .logout-button {
+      display: block;
+      margin-top: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+      padding: 10px;
+      width: 80%;
+      background-color: #2196f3;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .new-task-button:hover, .logout-button:hover {
+      background-color: #2196f3;
+    }
+
+    /* Estilos do conteúdo principal */
+    .main {
+      margin-left: 225px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      max-width: 100%;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #2196f3;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
+    @media (max-width: 768px) {
+      /* define o comportamento para telas menores */
+      .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      
+      .main {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+	<!-- Menu lateral -->
+	<div class="sidenav">
+	<img src="logo.png" alt="Minha Ferramenta logo">
+	<!-- <a href="#">Dashboard</a> -->
+	<!--<a onclick="window.location.href='/telaInicio/infoPerfil'">Perfil</a>-->
+  <a onclick="window.location.href='/telaInicio/infoPerfil'">Perfil</a>
+  <a onclick="window.location.href='/telaInicio/editarPerfil'">Editar Perfil</a>
+  <a onclick="window.location.href='/telaInicio/editarUsuario'">Editar Usuario</a>
+	<a onclick="window.location.href='/telaInicio/editarTarefas'">Editar Tarefas</a>
+  <a onclick="window.location.href='/telaInicio/excluirTarefas'">Excluir Tarefas</a>
+  <!--<button class="new-task-button">Nova Tarefa</button>-->
+  <button class="new-task-button" onclick="window.location.href='/telaInicio/novaTarefa'">Nova Tarefa</button>
+	<!-- <button class="logout-button">Logout</button> -->
+	<button class="logout-button" onclick="window.location.href='/logout'">Logout</button>
+	</div>
+
+   <!-- Conteúdo principal -->
+   <main class="main">
+    <h1>Editar Usuário</h1>
+    <form action="/telaInicio/editarTarefas/salvar" method="POST">
+      <label>Id:</label><br>
+      <input type="text" value="{{id}}" name="id" required><br>
+      <label>Name:</label><br>
+      <input type="text" value="{{name}}" name="name" required><br>
+      <label>Realized:</label><br>
+      <input type="text" value="{{realized}}" name="realized" required><br>
+      <input type="submit" value="Salvar">
+    </form>
+    <button onclick="window.location.href='/telaInicio'">Voltar</button>
+  </main>
+</body>
+</html> 

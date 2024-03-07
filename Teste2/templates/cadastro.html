@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro</title>
+    <style>
+		body {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+h1 {
+	margin-top: 0;
+	margin-bottom: 40px;
+}
+
+.form-container {
+	background-color: #FFFFFF;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+	margin-bottom: 20px;
+}
+
+h2 {
+	color: #2196f3;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+label {
+	color: #000000;
+}
+
+input {
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+button {
+	margin-top: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #2196f3;
+	color: #FFFFFF;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.button-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Cadastro</h1>
+
+		<div class="form-container">
+			<form action="/cadastro" method="POST">
+				<label for="name">Nome:</label>
+				<input type="text" id="name" name="name" required>
+
+				<label for="email">E-mail:</label>
+				<input type="email" id="email" name="email" required>
+
+				<label for="username">Nome de Usuário:</label>
+				<input type="text" id="username" name="username" required>
+
+				<label for="password">Senha:</label>
+				<input type="password" id="password" name="password" required>
+
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+
+		<div class="button-container">
+			<button onclick="window.location.href='/home'">Cancelar</button>
+		</div>
+	</div>
+</body>
+</html>
